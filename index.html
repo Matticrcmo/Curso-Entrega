@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulces Tentaciones</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function agregarAlCarrito(nombreProducto, precio) {
+      alert(`Agregado al carrito: ${nombreProducto} - $${precio}`);
+    }
+
+    function seleccionarYAgregar(nombreGrupo, nombreProducto, precios) {
+      const opciones = document.getElementsByName(nombreGrupo);
+      let seleccion = null;
+      for (let o of opciones) {
+        if (o.checked) seleccion = o.value;
+      }
+      if (seleccion) {
+        const precio = precios[seleccion];
+        agregarAlCarrito(nombreProducto + " (" + seleccion + ")", precio);
+      } else {
+        alert("Por favor seleccioná una opción antes de agregar al carrito.");
+      }
+    }
+  </script>
+</head>
+<body>
+ <header class="header-video">
+  <video autoplay muted loop playsinline class="video-fondo">
+    <source src="videos/fondo-header.mp4.mp4" type="video/mp4" />
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+
+  <div class="header-contenido">
+    <img src="img/logo.jpg" alt="Logo de la tienda" class="header-logo">
+    <h1 class="header-titulo">Dulce Tentacion</h1>
+    <p class="header-subtitulo">Tortas caseras, dulces y mucho amor</p>
+    <nav>
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <h2>Nuestros Productos</h2>
+    <section class="productos">
+      <article class="producto">
+        <img src="img/torta1.webp" alt="Torta de chocolate">
+        <h3>Torta de Chocolate</h3>
+        <p>Bizcochuelo húmedo con nueces, dulce de leche, crema y café..</p>
+        <form>
+          <label><input type="radio" name="torta_chocolate" value="porcion"> Porción - $1500</label><br>
+          <label><input type="radio" name="torta_chocolate" value="entera"> Torta entera - $8000</label><br>
+          <button type="button" onclick="seleccionarYAgregar('torta_chocolate', 'Torta de Chocolate', {porcion:1500, entera:4500})">Agregar al carrito</button>
+        </form>
+      </article>
+
+      <article class="producto">
+        <img src="img/torta2.webp" alt="Marquise con futos rojos">
+        <h3>Marquise con frutos rojos</h3>
+        <p>Base de marquise de chocolate, cubierta con dulce de leche, crema y frutos rojos.</p>
+        <form>
+          <label><input type="radio" name="marquise" value="porcion"> Porción - $1400</label><br>
+          <label><input type="radio" name="marquise" value="entera"> Torta entera - $8500</label><br>
+         <button type="button" onclick="seleccionarYAgregar('marquise', 'Marquise con frutos rojos', {porcion:1400, entera:8500})">Agregar al carrito</button>
+
+        </form>
+      </article>
+
+      <article class="producto">
+        <img src="img/torta3.webp" alt="Lemon Pie">
+        <h3>Lemon pie</h3>
+        <p>Masa dulce rellena con crema de limón y cubierta con merengue italiano.</p>
+        <form>
+          <label><input type="radio" name="lemon pie" value="porcion"> Porción - $1500</label><br>
+          <label><input type="radio" name="lemon pie" value="entera"> Torta entera - $5400</label><br>
+          <button type="button" onclick="seleccionarYAgregar('lemon pie', 'Lemon Pie', {porcion:1500, entera:5400})">Agregar al carrito</button>
+        </form>
+      </article>
+
+      <article class="producto">
+        <img src="img/torta4.webp" alt="Tarta frutal">
+        <h3>Frutal</h3>
+        <p>Base dulce cubierta con crema y dulce de leche o crema pastelera, y frutas de estación.</p>
+        <form>
+          <label><input type="radio" name="tarta" value="porcion"> Porción - $1300</label><br>
+          <label><input type="radio" name="tarta" value="entera"> Tarta entera - $4300</label><br>
+          <button type="button" onclick="seleccionarYAgregar('tarta', 'Tarta Frutal', {porcion:1300, entera:3700})">Agregar al carrito</button>
+        </form>
+      </article>
+
+      <article class="producto">
+        <img src="img/torta5.webp" alt="Sable">
+        <h3>Sablé</h3>
+        <p>Discos de masa sablé de almendras, cubiertos con dulce de leche, crema y frutos rojos.</p>
+        <form>
+          <label><input type="radio" name="torta sable" value="porcion"> Porción - $2000</label><br>
+          <label><input type="radio" name="torta sable" value="entera"> Tarta entera - $8900</label><br>
+          <button type="button" onclick="seleccionarYAgregar('torta sable', 'Sablé', {porcion:2000, entera:8900})">Agregar al carrito</button>
+        </form>
+      </article>
+
+      <article class="producto">
+        <img src="img/torta6.webp" alt="manzana acaremalada">
+        <h3>Manzana acaramelada</h3>
+        <p>Base de almendras, rellena con crema pastelera y cubierta con manzanas en rebanadas caramelizadas.</p>
+        <form>
+          <label><input type="radio" name="tarta manzana" value="porcion"> Porción - $1700</label><br>
+          <label><input type="radio" name="tarta manzana" value="entera"> Tarta entera - $6400</label><br>
+          <button type="button" onclick="seleccionarYAgregar('tarta manzana', 'Tarta de Manzana Acaramelada', {porcion:1700, entera:6400})">Agregar al carrito</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dulce Tentación</p>
+  </footer>
+</body>
+</html>

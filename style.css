@@ -1,0 +1,217 @@
+/* Importar tipografía Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Estilos básicos */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #FFF1F0; 
+  color: #6B4226; 
+}
+
+/* Header con imagen de fondo y capa oscura */
+header {
+  background-image: url('istockphoto-975053378-612x612.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFF1F0;
+  text-align: center;
+  padding: 5em 1em 3em;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor de logo y títulos */
+.header-contenido {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1em;
+  border-radius: 50%;
+  border: 2px solid #FFF1F0;
+  object-fit: cover;
+}
+
+.header-titulo {
+  font-size: 2.5rem;
+  margin: 0.3em 0 0.1em;
+  font-weight: 600;
+}
+
+.header-subtitulo {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+}
+
+.header-video {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.header-contenido {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.header-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Navegación */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+nav a {
+  color: #FFF1F0;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background-color: #FFF1F0;
+  color: #6B4226;
+}
+
+/* Sección de productos */
+main {
+  padding: 2em;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
+
+.producto {
+  background-color: #fff; 
+  border-radius: 10px;
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(196, 135, 147, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  box-shadow: 0 8px 16px rgba(196, 135, 147, 0.5);
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.precio {
+  font-weight: 600;
+  color: #C48793;
+}
+
+/* Formulario de contacto */
+.formulario {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input, textarea, button {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+button {
+  background-color: #C48793;
+  color: #FFF1F0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6B4226;
+  color: #FFF1F0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #C48793;
+  color: #FFF1F0;
+  margin-top: 2em;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .productos {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-titulo {
+    font-size: 2rem;
+  }
+
+  .header-subtitulo {
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
