@@ -3,27 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dulces Tentaciones</title>
+  <title>Dulce Tentacion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script>
-    function agregarAlCarrito(nombreProducto, precio) {
-      alert(`Agregado al carrito: ${nombreProducto} - $${precio}`);
-    }
-
-    function seleccionarYAgregar(nombreGrupo, nombreProducto, precios) {
-      const opciones = document.getElementsByName(nombreGrupo);
-      let seleccion = null;
-      for (let o of opciones) {
-        if (o.checked) seleccion = o.value;
-      }
-      if (seleccion) {
-        const precio = precios[seleccion];
-        agregarAlCarrito(nombreProducto + " (" + seleccion + ")", precio);
-      } else {
-        alert("Por favor seleccioná una opción antes de agregar al carrito.");
-      }
-    }
-  </script>
+  
 </head>
 <body>
  <header class="header-video">
@@ -36,14 +19,25 @@
     <img src="img/logo.jpg" alt="Logo de la tienda" class="header-logo">
     <h1 class="header-titulo">Dulce Tentacion</h1>
     <p class="header-subtitulo">Tortas caseras, dulces y mucho amor</p>
-    <nav>
-      <ul>
-        <li><a href="index.html#productos">Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-      </ul>
-    </nav>
+   <nav>
+  <ul>
+  <li><a href="index.html#productos">Productos</a></li>
+  <li><a href="contacto.html">Contacto</a></li>
+  <li><a href="nosotros.html">Nosotros</a></li>
+  <li>
+    <a href="#" id="btn-ver-carrito" class="carrito-icono">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="contador-carrito">0</span>
+    </a>
+  </li>
+</ul>
+
+</nav>
+
   </div>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </header>
 
 
@@ -57,7 +51,8 @@
         <form>
           <label><input type="radio" name="torta_chocolate" value="porcion"> Porción - $1500</label><br>
           <label><input type="radio" name="torta_chocolate" value="entera"> Torta entera - $8000</label><br>
-          <button type="button" onclick="seleccionarYAgregar('torta_chocolate', 'Torta de Chocolate', {porcion:1500, entera:4500})">Agregar al carrito</button>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
         </form>
       </article>
 
@@ -68,7 +63,8 @@
         <form>
           <label><input type="radio" name="marquise" value="porcion"> Porción - $1400</label><br>
           <label><input type="radio" name="marquise" value="entera"> Torta entera - $8500</label><br>
-         <button type="button" onclick="seleccionarYAgregar('marquise', 'Marquise con frutos rojos', {porcion:1400, entera:8500})">Agregar al carrito</button>
+         <button type="button" class="btn-agregar">Agregar al carrito</button>
+
 
         </form>
       </article>
@@ -80,7 +76,8 @@
         <form>
           <label><input type="radio" name="lemon pie" value="porcion"> Porción - $1500</label><br>
           <label><input type="radio" name="lemon pie" value="entera"> Torta entera - $5400</label><br>
-          <button type="button" onclick="seleccionarYAgregar('lemon pie', 'Lemon Pie', {porcion:1500, entera:5400})">Agregar al carrito</button>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
         </form>
       </article>
 
@@ -91,7 +88,8 @@
         <form>
           <label><input type="radio" name="tarta" value="porcion"> Porción - $1300</label><br>
           <label><input type="radio" name="tarta" value="entera"> Tarta entera - $4300</label><br>
-          <button type="button" onclick="seleccionarYAgregar('tarta', 'Tarta Frutal', {porcion:1300, entera:3700})">Agregar al carrito</button>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
         </form>
       </article>
 
@@ -102,18 +100,64 @@
         <form>
           <label><input type="radio" name="torta sable" value="porcion"> Porción - $2000</label><br>
           <label><input type="radio" name="torta sable" value="entera"> Tarta entera - $8900</label><br>
-          <button type="button" onclick="seleccionarYAgregar('torta sable', 'Sablé', {porcion:2000, entera:8900})">Agregar al carrito</button>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
         </form>
       </article>
 
       <article class="producto">
-        <img src="img/torta6.webp" alt="manzana acaremalada">
+        <img src="img/torta6.webp" alt="Manzana acaremalada">
         <h3>Manzana acaramelada</h3>
         <p>Base de almendras, rellena con crema pastelera y cubierta con manzanas en rebanadas caramelizadas.</p>
         <form>
           <label><input type="radio" name="tarta manzana" value="porcion"> Porción - $1700</label><br>
           <label><input type="radio" name="tarta manzana" value="entera"> Tarta entera - $6400</label><br>
-          <button type="button" onclick="seleccionarYAgregar('tarta manzana', 'Tarta de Manzana Acaramelada', {porcion:1700, entera:6400})">Agregar al carrito</button>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
+        </form>
+      </article>
+       <article class="producto">
+        <img src="img/torta7.webp" alt="Torta Normanda">
+        <h3>Normanda</h3>
+        <p>Milhojas de manzana, con arenado crocante.</p>
+        <form>
+          <label><input type="radio" name="tarta" value="porcion"> Porción - $1600</label><br>
+          <label><input type="radio" name="tarta" value="entera"> Tarta entera - $4800</label><br>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
+        </form>
+      </article>
+       <article class="producto">
+        <img src="img/torta8.webp" alt="Torta Tiramisú">
+        <h3>Tiramisú</h3>
+        <p>Bizcochuelo de vainilla. Relleno con queso crema, café, tía maría y chocolate.</p>
+        <form>
+          <label><input type="radio" name="tarta" value="porcion"> Porción - $1300</label><br>
+          <label><input type="radio" name="tarta" value="entera"> Tarta entera - $4500</label><br>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
+        </form>
+      </article>
+       <article class="producto">
+        <img src="img/torta9.webp" alt="Torta Rogel">
+        <h3>Rogel</h3>
+        <p>Finos discos de masa cubiertos con dulce de leche y merengue italiano.</p>
+        <form>
+          <label><input type="radio" name="tarta" value="porcion"> Porción - $1800</label><br>
+          <label><input type="radio" name="tarta" value="entera"> Tarta entera - $5300</label><br>
+          <button type="button" class="btn-agregar">Agregar al carrito</button>
+
+        </form>
+      </article>
+       <article class="producto">
+        <img src="img/torta10.webp" alt="Torta Red Velvet">
+        <h3>Red Velvet</h3>
+        <p>Torta roja con chocolate, rellena de frosting de queso crema.</p>
+        <form>
+          <label><input type="radio" name="tarta" value="porcion"> Porción - $1800</label><br>
+          <label><input type="radio" name="tarta" value="entera"> Tarta entera - $5000</label><br>
+         <button type="button" class="btn-agregar">Agregar al carrito</button>
+
         </form>
       </article>
     </section>
@@ -136,9 +180,25 @@
 </section>
 
   </main>
-
-  <footer>
+    <footer>
    <p>&copy; 2025 Dulce Tentación- Matias Cárcamo</p>
   </footer>
+
+  <div id="modal-carrito" class="modal-carrito oculto">
+  <div class="carrito-contenido">
+    <h3>Tu Carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0</span></p>
+    <button id="btn-vaciar-carrito">Vaciar carrito</button>
+    <button id="btn-cerrar-carrito">Cerrar</button>
+    <button id="btn-finalizar-compra">Finalizar compra</button>
+
+  </div>
+</div>
+
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
+

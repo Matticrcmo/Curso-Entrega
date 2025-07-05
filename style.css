@@ -10,9 +10,8 @@ body {
   color: #6B4226; 
 }
 
-/* Header con imagen de fondo y capa oscura */
 header {
-  background-image: url('istockphoto-975053378-612x612.jpg'); 
+   /* background-image: url('istockphoto-975053378-612x612.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,6 +116,10 @@ nav a:hover {
   color: #6B4226;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 /* Sección de productos */
 main {
   padding: 2em;
@@ -214,6 +217,65 @@ footer {
   color: #FFF1F0;
   margin-top: 2em;
 }
+.modal-carrito {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* fondo oscuro semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; 
+}
+
+.modal-carrito .carrito-contenido {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-carrito h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.modal-carrito ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.modal-carrito li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-carrito button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #2897c6;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.modal-carrito button:hover {
+  background-color: #b71c74;
+}
+
+/* Ocultar el modal por defecto */
+.oculto {
+  display: none;
+}
+
 
 /* Responsive */
 @media (max-width: 600px) {

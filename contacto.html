@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contacto - Dulce Tentación</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulce Tentacion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
   <header class="header-video">
   <video autoplay muted loop playsinline class="video-fondo">
@@ -18,18 +22,28 @@
     <h1 class="header-titulo">Dulce Tentacion</h1>
     <p class="header-subtitulo">Tortas caseras, dulces y mucho amor</p>
     <nav>
-      <ul>
-       <li><a href="index.html#productos">Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-      </ul>
-    </nav>
+ <ul>
+  <li><a href="index.html#productos">Productos</a></li>
+  <li><a href="contacto.html">Contacto</a></li>
+  <li><a href="nosotros.html">Nosotros</a></li>
+  <li>
+    <a href="#" id="btn-ver-carrito" class="carrito-icono">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="contador-carrito">0</span>
+    </a>
+  </li>
+</ul>
+
+</nav>
+
   </div>
 </header>
 
   <main>
     <h2>Contacto</h2>
-    <form action="#" method="post" class="formulario">
+    <form action="https://formspree.io/f/mwpbjpog" method="POST" class="formulario" id="formulario-contacto">
+
+
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" name="nombre" required>
 
@@ -46,6 +60,24 @@
   <footer>
     <p>&copy; 2025 Dulce Tentación- Matias Cárcamo</p>
   </footer>
+<div id="modal-carrito" class="modal-carrito oculto">
+  <div class="carrito-contenido">
+    <h3>Tu Carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0</span></p>
+    <button id="btn-vaciar-carrito">Vaciar carrito</button>
+    <button id="btn-cerrar-carrito">Cerrar</button>
+    <button id="btn-finalizar-compra">Finalizar compra</button>
+
+  </div>
+</div>
+
+
+  </div>
+
+  <script src="js/main.js"></script>
+
+
 </body>
 </html>
 
